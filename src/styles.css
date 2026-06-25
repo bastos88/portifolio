@@ -1,0 +1,219 @@
+@import "@fontsource/press-start-2p";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/600.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #fff5d6;
+  background: #13140f;
+  font-family: "JetBrains Mono", monospace;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(232, 195, 72, 0.08), transparent 22rem),
+    linear-gradient(180deg, #0e0f0b 0%, #13140f 42%, #171811 100%);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  color: #0e0f0b;
+  background: #82c93a;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+.crt-lines {
+  position: relative;
+}
+
+.crt-lines::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04) 0,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px,
+    transparent 5px
+  );
+  mix-blend-mode: soft-light;
+}
+
+.paper-texture {
+  background-color: #f0e3be;
+  background-image:
+    linear-gradient(rgba(46, 42, 31, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 42, 31, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at 18% 22%, rgba(216, 137, 49, 0.1), transparent 13rem),
+    radial-gradient(circle at 78% 36%, rgba(232, 195, 72, 0.12), transparent 18rem);
+  background-size: 18px 18px, 18px 18px, auto, auto;
+}
+
+.pixel-corners {
+  clip-path: polygon(
+    0 8px,
+    8px 8px,
+    8px 0,
+    calc(100% - 8px) 0,
+    calc(100% - 8px) 8px,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    8px calc(100% - 8px),
+    0 calc(100% - 8px)
+  );
+}
+
+.hero-crt-frame {
+  border: 4px solid #070806;
+  clip-path: polygon(
+    0 18px,
+    18px 18px,
+    18px 0,
+    calc(100% - 18px) 0,
+    calc(100% - 18px) 18px,
+    100% 18px,
+    100% calc(100% - 18px),
+    calc(100% - 18px) calc(100% - 18px),
+    calc(100% - 18px) 100%,
+    18px 100%,
+    18px calc(100% - 18px),
+    0 calc(100% - 18px)
+  );
+  box-shadow:
+    0 0 0 2px #343624,
+    0 0 0 5px #0a0b08,
+    0 0 0 7px #2a291c,
+    0 18px 0 rgba(0, 0, 0, 0.42);
+}
+
+.hero-crt-frame::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    linear-gradient(90deg, rgba(255, 245, 214, 0.1), transparent 5rem, transparent calc(100% - 5rem), rgba(255, 245, 214, 0.08)),
+    repeating-linear-gradient(180deg, transparent 0, transparent 3px, rgba(0, 0, 0, 0.36) 4px, rgba(0, 0, 0, 0.36) 5px);
+  opacity: 0.38;
+}
+
+.hud-pixel-frame {
+  position: relative;
+  background-color: #f0e3be;
+  border: 4px solid #171811;
+  clip-path: polygon(
+    0 10px,
+    10px 10px,
+    10px 0,
+    calc(100% - 10px) 0,
+    calc(100% - 10px) 10px,
+    100% 10px,
+    100% calc(100% - 10px),
+    calc(100% - 10px) calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    10px 100%,
+    10px calc(100% - 10px),
+    0 calc(100% - 10px)
+  );
+  box-shadow:
+    0 0 0 3px #8d7850,
+    0 0 0 6px #1a1a12,
+    7px 7px 0 rgba(0, 0, 0, 0.44);
+}
+
+.hud-pixel-frame::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 8px;
+  border: 2px solid rgba(74, 64, 40, 0.78);
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 245, 214, 0.65),
+    inset 4px 4px 0 rgba(141, 120, 80, 0.22);
+}
+
+.hud-pixel-frame::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 10px;
+  height: 10px;
+  background: #82c93a;
+  border: 2px solid #376d24;
+  box-shadow:
+    -14px 0 0 -4px #8d7850,
+    0 0 0 1px #171811;
+}
+
+.arcade-code {
+  height: 18.7rem;
+}
+
+.section-divider {
+  background-image: repeating-linear-gradient(
+    90deg,
+    currentColor 0,
+    currentColor 5px,
+    transparent 5px,
+    transparent 9px
+  );
+}
+
+.press-start-blink {
+  animation: press-start-blink 1.1s steps(2, end) infinite;
+}
+
+@keyframes press-start-blink {
+  0%,
+  48% {
+    opacity: 1;
+  }
+
+  49%,
+  100% {
+    opacity: 0.28;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

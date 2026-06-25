@@ -1,0 +1,13 @@
+node_modules/
+dist/
+output/
+test-results/
+
+*.log
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+
+ChatGPT Image *.png
+image.jpg

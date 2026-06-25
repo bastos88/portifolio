@@ -1,0 +1,32 @@
+import { motion } from "framer-motion";
+import type { HTMLMotionProps } from "framer-motion";
+import type { ReactNode } from "react";
+import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
+
+type RetroButtonProps = HTMLMotionProps<"a"> & {
+  children: ReactNode;
+  variant?: "primary" | "outline" | "dark";
+};
+
+const variants = {
+  primary: "border-arcade-greenDark bg-arcade-green text-arcade-hero hover:bg-[#9bdf4f]",
+  outline: "border-arcade-yellow bg-transparent text-arcade-yellow hover:bg-arcade-yellow hover:text-arcade-hero",
+  dark: "border-arcade-border bg-arcade-dark text-arcade-light hover:border-arcade-green hover:text-arcade-green",
+};
+
+export default function RetroButton({ children, variant = "primary", className = "", ...props }: RetroButtonProps) {
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  return (
+    <motion.a
+      whileHover={prefersReducedMotion ? undefined : { y: -2 }}
+      whileTap={prefersReducedMotion ? undefined : { scale: 0.97 }}
+      className={`inline-flex min-h-10 items-center justify-center gap-2 border-2 px-4 py-3 font-pixel text-[10px] uppercase leading-none shadow-pixel transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green ${variants[variant]} ${className}`}
+      {...props}
+    >
+      {children}
+    </motion.a>
+  );
+}
+
+
