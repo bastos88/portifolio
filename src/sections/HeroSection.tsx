@@ -76,7 +76,7 @@ export default function HeroSection() {
             </p>
           </div>
 
-          <div className="relative z-10 self-start justify-self-stretch pt-4 md:justify-self-start lg:pt-0 xl:justify-self-end">
+          <div className="relative z-10 hidden self-start justify-self-stretch pt-4 md:block md:justify-self-start lg:pt-0 xl:justify-self-end">
             <HudCard />
           </div>
         </div>

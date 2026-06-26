@@ -8,7 +8,7 @@ export const projects: readonly Project[] = [
   {
     id: "01",
     title: "CodeQuest",
-    description: "Quiz interativo de programacao com React, Node.js e PostgreSQL.",
+    description: "Quiz interativo de programação com React, Node.js e PostgreSQL.",
     tech: ["React", "TS", "JS", "Prisma", "PG", "CSS", "HTML"],
     variant: "forest",
     image: quizImage,
@@ -20,7 +20,7 @@ export const projects: readonly Project[] = [
   {
     id: "02",
     title: "Currency Converter",
-    description: "Conversor de moedas com integracao a API externa.",
+    description: "Conversor de moedas com integração a API externa.",
     tech: ["Node", "JS", "API", "React"],
     variant: "world",
     image: converterImage,
@@ -30,7 +30,7 @@ export const projects: readonly Project[] = [
   },
   {
     id: "03",
-    title: "Arquiteto Portifólio",
+    title: "Arquiteto Portfólio",
     description: "Landing page de um arquiteto.",
     tech: ["HTML", "JS", "CSS", "TailwindCSS"],
     variant: "arquiteto",
@@ -41,8 +41,8 @@ export const projects: readonly Project[] = [
   },
   {
     id: "04",
-    title: "REST API Users",
-    description: "LandingPage de uma loja de revitalização de faróis.",
+    title: "Dr. Farol",
+    description: "Landing page de uma loja de revitalização de faróis.",
     tech: ["React", "TailwindCSS", "TS"],
     variant: "server",
     image: drFarolImage,

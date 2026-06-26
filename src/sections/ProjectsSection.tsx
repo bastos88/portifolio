@@ -106,12 +106,12 @@ export default function ProjectsSection() {
 
     let resetIndex: number | null = null;
 
-    // Chegou ao primeiro card da terceira cópia: 01 → 02 → 03...
+    // Reached the first card of the third copy: 01 -> 02 -> 03...
     if (currentIndex === firstProjectBeforeReset) {
       resetIndex = firstRealProjectIndex;
     }
 
-    // Chegou ao último card da primeira cópia: 04 ← 03 ← 02...
+    // Reached the last card of the first copy: 04 <- 03 <- 02...
     if (currentIndex === projects.length - 1) {
       resetIndex = lastProjectBeforeReset;
     }
@@ -121,7 +121,7 @@ export default function ProjectsSection() {
       return;
     }
 
-    // Reposiciona sem animação para a cópia central equivalente.
+    // Reposition without animation to the matching center copy.
     setIsTransitionEnabled(false);
     setCurrentIndex(resetIndex);
 
@@ -149,7 +149,7 @@ export default function ProjectsSection() {
           disabled={isMoving || slideStep === 0}
           className="absolute left-1 top-24 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center border-2 border-arcade-border bg-arcade-dark font-pixel text-xl leading-none text-arcade-yellow shadow-pixel transition-transform hover:-translate-y-[55%] hover:bg-arcade-panel disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green xl:left-[-42px] xl:top-1/2 xl:h-auto xl:w-auto xl:px-3 xl:py-2 xl:text-2xl"
         >
-          ‹
+          &lsaquo;
         </button>
 
         <div
@@ -192,7 +192,7 @@ export default function ProjectsSection() {
           disabled={isMoving || slideStep === 0}
           className="absolute right-1 top-24 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center border-2 border-arcade-border bg-arcade-dark font-pixel text-xl leading-none text-arcade-yellow shadow-pixel transition-transform hover:-translate-y-[55%] hover:bg-arcade-panel disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green xl:right-[-42px] xl:top-1/2 xl:h-auto xl:w-auto xl:px-3 xl:py-2 xl:text-2xl"
         >
-          ›
+          &rsaquo;
         </button>
       </div>
     </PixelPanel>

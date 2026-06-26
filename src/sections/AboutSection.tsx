@@ -33,7 +33,7 @@ export default function AboutSection() {
               ))}
             </div>
           </div>
-          <div className="p-5"> 
+          <div className="p-5">
             <p className="mb-1 font-pixel text-[10px] uppercase leading-5">Coffee:</p>
             <p className="flex items-center gap-2 font-pixel text-[10px] uppercase">
               Required <Coffee size={18} aria-hidden="true" />
