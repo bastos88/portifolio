@@ -1,9 +1,9 @@
 import type { LucideIcon } from "lucide-react";
 import type { IconType } from "react-icons";
 
-export type SectionId = "home" | "about" | "skills" | "projects" | "experience" | "contact";
+export type SectionId = "home" | "about" | "skills" | "projects" | "game-progress" | "contact";
 
-export type ProjectVariant = "forest" | "world" | "coffee" | "server";
+export type ProjectVariant = "forest" | "world" | "arquiteto" | "server";
 
 export interface Project {
   id: string;

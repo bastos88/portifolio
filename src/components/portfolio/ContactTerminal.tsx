@@ -16,7 +16,7 @@ export default function ContactTerminal() {
             type="text"
             autoComplete="name"
             placeholder="> name_"
-            className="min-h-[66px] border-[3px] border-arcade-border bg-[#f1dfaf] px-7 py-5 text-lg font-semibold text-arcade-text placeholder:text-arcade-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
+            className="min-h-[66px] border-[3px] border-arcade-border bg-[#f1dfaf] px-3 py-5 text-md font-semibold text-arcade-text placeholder:text-arcade-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
           />
           <label className="sr-only" htmlFor="email">
             Email
@@ -26,7 +26,7 @@ export default function ContactTerminal() {
             type="email"
             autoComplete="email"
             placeholder="> email_"
-            className="min-h-[66px] border-[3px] border-arcade-border bg-[#f1dfaf] px-7 py-5 text-lg font-semibold text-arcade-text placeholder:text-arcade-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
+            className="min-h-[66px] border-[3px] border-arcade-border bg-[#f1dfaf] px-3 py-5 text-md font-semibold text-arcade-text placeholder:text-arcade-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
           />
         </div>
         <label className="sr-only" htmlFor="message">
@@ -40,7 +40,7 @@ export default function ContactTerminal() {
         />
         <button
           type="button"
-          className="inline-flex min-h-[62px] items-center gap-3 self-start border-[3px] border-arcade-greenDark bg-arcade-green px-9 py-5 font-pixel text-[12px] uppercase text-arcade-hero shadow-[6px_6px_0_rgba(37,38,28,0.38)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
+          className="inline-flex min-h-[62px] items-center gap-3 self-start border-[3px] border-arcade-greenDark bg-arcade-green px-9 py-5 font-pixel text-[12px] uppercase text-arcade-hero shadow-[6px_6px_0_rgba(37,38,28,0.38)] transition-all duration-150 hover:-translate-y-1 hover:bg-[#9bdf4f] hover:shadow-[8px_8px_0_rgba(37,38,28,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
         >
           <Send size={18} aria-hidden="true" />
           Send Message

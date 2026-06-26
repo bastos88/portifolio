@@ -360,6 +360,18 @@ const techIcons: Record<string, TechIconConfig> = {
 export default function ProjectStageCard({
   project,
 }: ProjectStageCardProps) {
+  const projectLinkClassName =
+    "flex min-h-10 items-center justify-center gap-1 border border-arcade-greenDark bg-arcade-green px-2 py-2 font-pixel text-[9px] uppercase text-arcade-hero transition-colors hover:bg-[#9bdf4f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green";
+
+  const disabledProjectLinkClassName =
+    "flex min-h-10 cursor-not-allowed items-center justify-center gap-1 border border-arcade-greenDark bg-arcade-green/50 px-2 py-2 font-pixel text-[9px] uppercase text-arcade-hero/70";
+
+  const codeLinkClassName =
+    "flex min-h-10 items-center justify-center gap-1 border border-arcade-yellow bg-transparent px-2 py-2 font-pixel text-[9px] uppercase text-arcade-yellow transition-colors hover:bg-arcade-yellow hover:text-arcade-hero focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green";
+
+  const disabledCodeLinkClassName =
+    "flex min-h-10 cursor-not-allowed items-center justify-center gap-1 border border-arcade-yellow/50 bg-transparent px-2 py-2 font-pixel text-[9px] uppercase text-arcade-yellow/50";
+
   return (
     <article className="flex h-full min-h-[398px] min-w-0 flex-col overflow-hidden border-[3px] border-arcade-border bg-arcade-dark text-arcade-light shadow-pixel">
       <div className="relative h-40 shrink-0 overflow-hidden border-b-2 border-arcade-yellow bg-arcade-panel">
@@ -411,21 +423,43 @@ export default function ProjectStageCard({
         </div>
 
         <div className="mt-auto grid grid-cols-2 gap-3 pt-4">
-          <button
-            type="button"
-            className="flex min-h-10 items-center justify-center gap-1 border border-arcade-greenDark bg-arcade-green px-2 py-2 font-pixel text-[9px] uppercase text-arcade-hero transition-colors hover:bg-[#9bdf4f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
-          >
-            <Play size={12} aria-hidden="true" />
-            Play Demo
-          </button>
+          {project.liveUrl ? (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className={projectLinkClassName}
+            >
+              <Play size={12} aria-hidden="true" />
+              View Project
+            </a>
+          ) : (
+            <button
+              type="button"
+              disabled
+              className={disabledProjectLinkClassName}
+            >
+              <Play size={12} aria-hidden="true" />
+              View Project
+            </button>
+          )}
 
-          <button
-            type="button"
-            className="flex min-h-10 items-center justify-center gap-1 border border-arcade-yellow bg-transparent px-2 py-2 font-pixel text-[9px] uppercase text-arcade-yellow transition-colors hover:bg-arcade-yellow hover:text-arcade-hero focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
-          >
-            <Code2 size={12} aria-hidden="true" />
-            View Code
-          </button>
+          {project.githubUrl ? (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className={codeLinkClassName}
+            >
+              <Code2 size={12} aria-hidden="true" />
+              View Code
+            </a>
+          ) : (
+            <button type="button" disabled className={disabledCodeLinkClassName}>
+              <Code2 size={12} aria-hidden="true" />
+              View Code
+            </button>
+          )}
         </div>
       </div>
     </article>

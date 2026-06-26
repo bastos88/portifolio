@@ -11,7 +11,7 @@ export default function AboutSection() {
     <PixelPanel id="about" className="rounded-t-sm">
       <PixelSectionTitle number="01" title="Player Profile" />
       <div className="grid gap-8 lg:grid-cols-[280px_180px_minmax(420px,1fr)_300px] lg:items-center">
-        <div className="flex min-h-[250px] items-center justify-center border-2 border-[#4A4028] bg-[#E8D8AE] p-3 shadow-[3px_3px_0_#25261C]">
+        <div className="flex min-h-[250px] items-center justify-center border-2 border-[#4A4028] bg-[#E8D8AE] shadow-[3px_3px_0_#25261C]">
           <img
             src={avatar}
             alt="Avatar pixelado de Leonardo Bastos"
@@ -33,10 +33,10 @@ export default function AboutSection() {
               ))}
             </div>
           </div>
-          <div className="p-5">
+          <div className="p-5"> 
             <p className="mb-1 font-pixel text-[10px] uppercase leading-5">Coffee:</p>
             <p className="flex items-center gap-2 font-pixel text-[10px] uppercase">
-              Required <Coffee size={14} aria-hidden="true" />
+              Required <Coffee size={18} aria-hidden="true" />
             </p>
           </div>
         </div>

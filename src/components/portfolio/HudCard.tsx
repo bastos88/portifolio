@@ -16,7 +16,7 @@ export default function HudCard() {
             Level: <span className="font-mono font-bold">Junior+</span>
           </p>
         </div>
-        <PixelProgressBar value={82} label="XP" size="hud" />
+        <PixelProgressBar value={82} label="XP:" size="hud" />
         <p className="mt-6 font-pixel text-[11px] uppercase xl:mt-7 xl:text-[12px]">
           Status: <span className="text-arcade-greenDark">Online</span>
         </p>

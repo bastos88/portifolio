@@ -6,6 +6,6 @@ export const navItems: readonly NavItem[] = [
   { href: "#about", label: "About", Icon: Code2 },
   { href: "#skills", label: "Skills", Icon: Code2 },
   { href: "#projects", label: "Projects", Icon: Code2 },
-  { href: "#experience", label: "Experience", Icon: Code2 },
+  { href: "#game-progress", label: "Experience", Icon: Code2 },
   { href: "#contact", label: "Contact", Icon: Mail },
 ];

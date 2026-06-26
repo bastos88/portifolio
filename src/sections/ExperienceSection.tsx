@@ -5,11 +5,13 @@ import { timeline } from "../data/timeline";
 
 export default function ExperienceSection() {
   return (
-    <PixelPanel id="experience">
+    <PixelPanel id="game-progress">
       <PixelSectionTitle number="05" title="Game Progress" />
       <div className="grid gap-6 md:grid-cols-4">
-        {timeline.map((item) => (
-          <TimelineStep key={item.year} item={item} />
+        {timeline.map((item, index) => (
+          <TimelineStep key={item.year}
+           item={item} 
+           isLast={index === timeline.length - 1}/>
         ))}
       </div>
     </PixelPanel>

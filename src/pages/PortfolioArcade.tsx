@@ -1,4 +1,5 @@
 import RetroNavbar from "../components/portfolio/RetroNavbar";
+import RocketScrollTop from "../components/portfolio/RocketScrollTop";
 import StatusFooter from "../components/portfolio/StatusFooter";
 import AboutSection from "../sections/AboutSection";
 import ContactSection from "../sections/ContactSection";
@@ -26,6 +27,7 @@ export default function PortfolioArcade() {
       </main>
 
       <StatusFooter />
+      <RocketScrollTop targetId="home" triggerId="game-progress" />
     </div>
   );
 }
