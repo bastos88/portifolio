@@ -3,6 +3,7 @@ import arquitetoImage from "../assets/portfolio/arquiteto.png";
 import converterImage from "../assets/portfolio/ConverterImg.png";
 import drFarolImage from "../assets/portfolio/drfarol-retro.png";
 import quizImage from "../assets/portfolio/quizImg.png";
+import coffeeDeliveryImage from "../assets/portfolio/coffeeDeliveryImage.png";
 
 export const projects: readonly Project[] = [
   {
@@ -50,5 +51,17 @@ export const projects: readonly Project[] = [
     imagePosition: "center",
     liveUrl: "https://www.drfarol.pt/",
     githubUrl: "",
+  },
+  {
+    id: "05",
+    title: "Coffee Delivery",
+    description: "Plataforma full stack de delivery de cafés com carrinho, checkout, pagamentos e pedidos integrados ao backend",
+    tech: ["React", "TypeScript", "Node.js", "Express", "Prisma", "PostgreSQL"],
+    variant: "server",
+    image: coffeeDeliveryImage,
+    imageAlt: "Interface do projeto Coffee Delivery com catálogo de cafés e checkout",
+    imagePosition: "center",
+    liveUrl: "https://coffeeshop-delivery.vercel.app/",
+    githubUrl: "https://github.com/bastos88/coffee-delivery",
   },
 ];
