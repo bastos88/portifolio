@@ -1,6 +1,7 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
-import rocketImage from "../../assets/rocket.png";
+import rocket72 from "../../assets/portfolio/optimized/rocket-72.webp";
+import rocket144 from "../../assets/portfolio/optimized/rocket-144.webp";
 
 type RocketScrollTopProps = {
   targetId: string;
@@ -155,7 +156,16 @@ export default function RocketScrollTop({ targetId, triggerId }: RocketScrollTop
           transition={{ duration: isLaunching ? 0.7 : 0.22, ease: "easeOut" }}
         >
           {!shouldReduceMotion && particles.length > 0 ? <SmokeParticles particles={particles} /> : null}
-          <img src={rocketImage} alt="" aria-hidden="true" className="rocket-scroll-top__image" />
+          <img
+            src={rocket72}
+            srcSet={`${rocket72} 72w, ${rocket144} 144w`}
+            sizes="(max-width: 767px) 52px, 72px"
+            width={72}
+            height={72}
+            alt=""
+            aria-hidden="true"
+            className="rocket-scroll-top__image"
+          />
         </motion.button>
       ) : null}
     </AnimatePresence>

@@ -5,13 +5,21 @@ export type SectionId = "home" | "about" | "skills" | "projects" | "game-progres
 
 export type ProjectVariant = "forest" | "world" | "arquiteto" | "server";
 
+export interface ResponsiveImage {
+  src: string;
+  srcSet: string;
+  sizes: string;
+  width: number;
+  height: number;
+}
+
 export interface Project {
   id: string;
   title: string;
   description: string;
   tech: readonly string[];
   variant: ProjectVariant;
-  image: string;
+  image: ResponsiveImage;
   imageAlt: string;
   imagePosition?: string;
   githubUrl?: string;

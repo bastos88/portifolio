@@ -1,6 +1,8 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import logo from "../../assets/portfolio/logo-leonardo-8bit-transparent.png";
+import logo320 from "../../assets/portfolio/optimized/logo-leonardo-8bit-transparent-320.webp";
+import logo480 from "../../assets/portfolio/optimized/logo-leonardo-8bit-transparent-480.webp";
+import logo640 from "../../assets/portfolio/optimized/logo-leonardo-8bit-transparent-640.webp";
 import { navItems } from "../../constants/navigation";
 import type { SectionId } from "../../types/portfolio";
 
@@ -102,8 +104,12 @@ export default function RetroNavbar() {
           aria-label="Leonardo - voltar ao início"
         >
           <img
-            src={logo}
+            src={logo480}
+            srcSet={`${logo320} 320w, ${logo480} 480w, ${logo640} 640w`}
+            sizes="(min-width: 1024px) 280px, (min-width: 768px) 230px, 180px"
             alt="Leonardo - 8 Bits Dev Portfolio"
+            width={480}
+            height={210}
             decoding="async"
             className="navbar-logo h-12 w-auto max-w-[180px] object-contain md:max-w-[230px] lg:h-14 lg:max-w-[280px]"
           />

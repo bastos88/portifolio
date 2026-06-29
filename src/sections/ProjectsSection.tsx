@@ -154,7 +154,7 @@ export default function ProjectsSection() {
 
         <div
           ref={viewportRef}
-          className="mx-auto max-w-[285px] overflow-hidden sm:max-w-none"
+          className="carousel-viewport mx-auto max-w-[285px] overflow-hidden sm:max-w-none"
           style={{ touchAction: "pan-y" }}
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerUp}

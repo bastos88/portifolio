@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 type PixelProgressBarProps = {
   value: number;
   label?: string;
@@ -15,7 +13,7 @@ export default function PixelProgressBar({ value, label, size = "default" }: Pix
         <span className={`${isHud ? "w-20 text-[11px] xl:text-[12px]" : "w-28 text-[10px]"} shrink-0 font-pixel uppercase text-arcade-text`}>{label}</span>
       ) : null}
       <div className={`${isHud ? "h-5 border-2 p-[3px]" : "h-4 border p-[2px]"} flex-1 border-arcade-border bg-[#d8c89a]`}>
-        <motion.div
+        <div
           style={{ width: `${value}%` }}
           className="h-full bg-arcade-green shadow-[inset_-2px_-2px_0_rgba(55,109,36,0.55)]"
         />

@@ -1,6 +1,8 @@
 import { Download, Gamepad2, Play } from "lucide-react";
 import cvPdf from "../assets/leonardo-bastos-cv.pdf";
-import heroBg from "../assets/portfolio/hero-arcade-bg.jpg";
+import heroBg640 from "../assets/portfolio/optimized/hero-arcade-bg-640.webp";
+import heroBg960 from "../assets/portfolio/optimized/hero-arcade-bg-960.webp";
+import heroBg1280 from "../assets/portfolio/optimized/hero-arcade-bg-1280.webp";
 import HudCard from "../components/portfolio/HudCard";
 import RetroButton from "../components/portfolio/RetroButton";
 
@@ -9,12 +11,16 @@ export default function HeroSection() {
     <section id="home" className="relative isolate mx-auto max-w-[1360px] overflow-hidden bg-[#0E0F0B] px-3 py-3 md:px-4 md:py-4">
       <div className="hero-crt-frame relative min-h-[620px] overflow-hidden bg-[#11120E] md:min-h-[650px] lg:min-h-[700px]">
         <img
-          src={heroBg}
+          src={heroBg1280}
+          srcSet={`${heroBg640} 640w, ${heroBg960} 960w, ${heroBg1280} 1280w`}
+          sizes="min(100vw, 1360px)"
           alt=""
           aria-hidden="true"
+          width={1280}
+          height={720}
           fetchPriority="high"
           decoding="async"
-          className="pointer-events-none absolute inset-0 h-full w-full select-none object-[center_bottom]"
+          className="pointer-events-none absolute inset-0 h-full w-full select-none object-contain object-[center_bottom]"
         />
         <div
           aria-hidden="true"

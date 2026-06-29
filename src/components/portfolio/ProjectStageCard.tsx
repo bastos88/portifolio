@@ -376,11 +376,16 @@ export default function ProjectStageCard({
     <article className="flex h-full min-h-[398px] min-w-0 flex-col overflow-hidden border-[3px] border-arcade-border bg-arcade-dark text-arcade-light shadow-pixel">
       <div className="relative h-40 shrink-0 overflow-hidden border-b-2 border-arcade-yellow bg-arcade-panel">
         <img
-          src={project.image}
+          src={project.image.src}
+          srcSet={project.image.srcSet}
+          sizes={project.image.sizes}
           alt={project.imageAlt}
+          width={project.image.width}
+          height={project.image.height}
           className="pixelated h-full w-full object-cover transition-transform duration-300 hover:scale-105"
           style={{ objectPosition: project.imagePosition ?? "center" }}
           loading="lazy"
+          decoding="async"
         />
 
         <span className="absolute left-2 top-2 border border-arcade-border bg-[#f4edcf] px-1 font-pixel text-sm text-arcade-hero shadow-[2px_2px_0_rgba(0,0,0,0.35)]">

@@ -1,5 +1,7 @@
 import { Send } from "lucide-react";
-import crtTerminalPlant from "../../assets/portfolio/retro_monitor_plant_transparent_no_halo.png";
+import crtTerminalPlant260 from "../../assets/portfolio/optimized/retro-monitor-plant-260.webp";
+import crtTerminalPlant360 from "../../assets/portfolio/optimized/retro-monitor-plant-360.webp";
+import crtTerminalPlant520 from "../../assets/portfolio/optimized/retro-monitor-plant-520.webp";
 import { socialCommands } from "../../constants/socialCommands";
 
 export default function ContactTerminal() {
@@ -67,8 +69,13 @@ export default function ContactTerminal() {
 
       <div className="relative z-10 flex h-full min-h-[320px] items-end justify-center pt-6 lg:absolute lg:bottom-0 lg:right-0 lg:min-h-0 lg:w-[250px] lg:justify-end xl:w-[320px]">
         <img
-          src={crtTerminalPlant}
+          src={crtTerminalPlant360}
+          srcSet={`${crtTerminalPlant260} 260w, ${crtTerminalPlant360} 360w, ${crtTerminalPlant520} 520w`}
+          sizes="(min-width: 1280px) 300px, (min-width: 1024px) 300px, 260px"
           alt="Computador CRT pixelado com planta e mensagem motivacional"
+          width={360}
+          height={215}
+          loading="lazy"
           decoding="async"
           className="pixelated w-full max-w-[260px] object-contain drop-shadow-[4px_4px_0_rgba(37,38,28,0.4)] md:max-w-[320px] lg:max-w-[300px] xl:max-w-[300px]"
         />

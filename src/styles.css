@@ -1,6 +1,27 @@
-@import "@fontsource/press-start-2p";
-@import "@fontsource/jetbrains-mono/400.css";
-@import "@fontsource/jetbrains-mono/600.css";
+@font-face {
+  font-family: "Press Start 2P";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("@fontsource/press-start-2p/files/press-start-2p-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("@fontsource/jetbrains-mono/files/jetbrains-mono-latin-ext-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600 700;
+  src: url("@fontsource/jetbrains-mono/files/jetbrains-mono-latin-ext-600-normal.woff2") format("woff2");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,6 +37,7 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -176,6 +198,23 @@ textarea {
 .navbar-link-cta.navbar-link-active {
   color: #0e0f0b;
   background: #82c93a;
+}
+
+.retro-button {
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.retro-button:hover {
+  transform: translateY(-2px);
+}
+
+.carousel-viewport {
+  contain: layout paint;
 }
 
 .navbar-scrolled .navbar-link {

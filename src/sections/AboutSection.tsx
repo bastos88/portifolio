@@ -1,6 +1,10 @@
 import { Coffee } from "lucide-react";
-import avatar from "../assets/portfolio/avatar-leonardo-pixel.jpg";
-import miniGameboyHeart from "../assets/portfolio/mini-gameboy-heart.png";
+import avatar280 from "../assets/portfolio/optimized/avatar-leonardo-pixel-280.webp";
+import avatar420 from "../assets/portfolio/optimized/avatar-leonardo-pixel-420.webp";
+import avatar560 from "../assets/portfolio/optimized/avatar-leonardo-pixel-560.webp";
+import miniGameboyHeart220 from "../assets/portfolio/optimized/mini-gameboy-heart-220.webp";
+import miniGameboyHeart340 from "../assets/portfolio/optimized/mini-gameboy-heart-340.webp";
+import miniGameboyHeart480 from "../assets/portfolio/optimized/mini-gameboy-heart-480.webp";
 import PixelPanel from "../components/portfolio/PixelPanel";
 import PixelProgressBar from "../components/portfolio/PixelProgressBar";
 import PixelSectionTitle from "../components/portfolio/PixelSectionTitle";
@@ -13,8 +17,12 @@ export default function AboutSection() {
       <div className="grid gap-8 lg:grid-cols-[280px_180px_minmax(420px,1fr)_300px] lg:items-center">
         <div className="flex min-h-[250px] items-center justify-center border-2 border-[#4A4028] bg-[#E8D8AE] shadow-[3px_3px_0_#25261C]">
           <img
-            src={avatar}
+            src={avatar420}
+            srcSet={`${avatar280} 280w, ${avatar420} 420w, ${avatar560} 560w`}
+            sizes="(min-width: 1024px) 280px, 280px"
             alt="Avatar pixelado de Leonardo Bastos"
+            width={420}
+            height={440}
             loading="lazy"
             decoding="async"
             className="pixelated h-full max-h-[290px] w-auto object-contain"
@@ -57,8 +65,12 @@ export default function AboutSection() {
         </div>
         <div className="flex h-[220px] items-center justify-center overflow-hidden md:h-[260px] lg:h-[335px]">
           <img
-            src={miniGameboyHeart}
+            src={miniGameboyHeart340}
+            srcSet={`${miniGameboyHeart220} 220w, ${miniGameboyHeart340} 340w, ${miniGameboyHeart480} 480w`}
+            sizes="(min-width: 1024px) 300px, (min-width: 768px) 260px, 220px"
             alt="Console portátil pixelado com coração"
+            width={340}
+            height={474}
             loading="lazy"
             decoding="async"
             className="pixelated h-full w-auto max-w-none object-contain drop-shadow-[3px_3px_0_rgba(37,38,28,0.45)]"

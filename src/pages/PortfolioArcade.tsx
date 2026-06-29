@@ -1,5 +1,5 @@
+import { lazy, Suspense } from "react";
 import RetroNavbar from "../components/portfolio/RetroNavbar";
-import RocketScrollTop from "../components/portfolio/RocketScrollTop";
 import StatusFooter from "../components/portfolio/StatusFooter";
 import AboutSection from "../sections/AboutSection";
 import ContactSection from "../sections/ContactSection";
@@ -8,6 +8,8 @@ import HeroSection from "../sections/HeroSection";
 import ProjectsSection from "../sections/ProjectsSection";
 import SkillsSection from "../sections/SkillsSection";
 import SourceCodeSection from "../sections/SourceCodeSection";
+
+const RocketScrollTop = lazy(() => import("../components/portfolio/RocketScrollTop"));
 
 export default function PortfolioArcade() {
   return (
@@ -27,7 +29,9 @@ export default function PortfolioArcade() {
       </main>
 
       <StatusFooter />
-      <RocketScrollTop targetId="home" triggerId="game-progress" />
+      <Suspense fallback={null}>
+        <RocketScrollTop targetId="home" triggerId="game-progress" />
+      </Suspense>
     </div>
   );
 }

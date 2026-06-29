@@ -14,9 +14,17 @@
       property="og:description"
       content="Portfólio arcade developer com projetos, skills e experiência em Front-End."
     />
-    <meta property="og:image" content="/src/assets/portfolio/logo-leonardo-8bit-transparent.png" />
+    <meta property="og:image" content="/src/assets/portfolio/optimized/og-logo-1200.webp" />
     <meta property="og:locale" content="pt_BR" />
-    <link rel="icon" type="image/png" href="/src/assets/portfolio/logo-leonardo-8bit-transparent.png" />
+    <link
+      rel="preload"
+      as="image"
+      href="/src/assets/portfolio/optimized/hero-arcade-bg-1280.webp"
+      imagesrcset="/src/assets/portfolio/optimized/hero-arcade-bg-640.webp 640w, /src/assets/portfolio/optimized/hero-arcade-bg-960.webp 960w, /src/assets/portfolio/optimized/hero-arcade-bg-1280.webp 1280w"
+      imagesizes="min(100vw, 1360px)"
+      fetchpriority="high"
+    />
+    <link rel="icon" type="image/png" href="/src/assets/portfolio/optimized/favicon-96.png" />
     <title>Leonardo Bastos | 8-Bits Dev Portfolio</title>
   </head>
   <body>

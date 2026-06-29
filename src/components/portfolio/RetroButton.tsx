@@ -1,9 +1,6 @@
-import { motion } from "framer-motion";
-import type { HTMLMotionProps } from "framer-motion";
-import type { ReactNode } from "react";
-import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
+import type { AnchorHTMLAttributes, ReactNode } from "react";
 
-type RetroButtonProps = HTMLMotionProps<"a"> & {
+type RetroButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   children: ReactNode;
   variant?: "primary" | "outline" | "dark" | "download";
 };
@@ -17,17 +14,12 @@ const variants = {
 };
 
 export default function RetroButton({ children, variant = "primary", className = "", ...props }: RetroButtonProps) {
-  const prefersReducedMotion = usePrefersReducedMotion();
-
   return (
-    <motion.a
-      whileHover={prefersReducedMotion ? undefined : { y: -2 }}
-      whileTap={prefersReducedMotion ? undefined : { y: 3, scale: 0.98 }}
-      className={`inline-flex min-h-10 items-center justify-center gap-2 border-2 px-4 py-3 font-pixel text-[10px] uppercase leading-none shadow-pixel transition-colors active:translate-y-1 active:shadow-[2px_2px_0_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green ${variants[variant]} ${className}`}
+    <a
+      className={`retro-button inline-flex min-h-10 items-center justify-center gap-2 border-2 px-4 py-3 font-pixel text-[10px] uppercase leading-none shadow-pixel transition-colors active:translate-y-1 active:shadow-[2px_2px_0_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green ${variants[variant]} ${className}`}
       {...props}
     >
       {children}
-    </motion.a>
+    </a>
   );
 }
-
