@@ -1,13 +1,45 @@
+import { FormEvent, useState } from "react";
 import { Send } from "lucide-react";
 import crtTerminalPlant260 from "../../assets/portfolio/optimized/retro-monitor-plant-260.webp";
 import crtTerminalPlant360 from "../../assets/portfolio/optimized/retro-monitor-plant-360.webp";
 import crtTerminalPlant520 from "../../assets/portfolio/optimized/retro-monitor-plant-520.webp";
 import { socialCommands } from "../../constants/socialCommands";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvzjbjow";
+
 export default function ContactTerminal() {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("sending");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Formspree request failed");
+      }
+
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <div className="relative mt-8 grid items-end gap-8 lg:mt-12 lg:grid-cols-[minmax(0,1fr)_300px_250px] xl:grid-cols-[minmax(0,1fr)_340px_320px] xl:gap-9">
-      <form className="flex h-full min-h-[360px] flex-col space-y-6" aria-label="Contact form">
+      <form className="flex h-full min-h-[360px] flex-col space-y-6" aria-label="Contact form" onSubmit={handleSubmit}>
         <p className="font-pixel text-[12px] leading-6 text-arcade-text">&gt; Quer iniciar uma nova missão?</p>
         <div className="grid gap-5 md:grid-cols-2">
           <label className="sr-only" htmlFor="name">
@@ -15,9 +47,11 @@ export default function ContactTerminal() {
           </label>
           <input
             id="name"
+            name="name"
             type="text"
             autoComplete="name"
             placeholder="> name_"
+            required
             className="min-h-[66px] border-[3px] border-arcade-border bg-[#f1dfaf] px-3 py-5 text-md font-semibold text-arcade-text placeholder:text-arcade-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
           />
           <label className="sr-only" htmlFor="email">
@@ -25,9 +59,11 @@ export default function ContactTerminal() {
           </label>
           <input
             id="email"
+            name="email"
             type="email"
             autoComplete="email"
             placeholder="> email_"
+            required
             className="min-h-[66px] border-[3px] border-arcade-border bg-[#f1dfaf] px-3 py-5 text-md font-semibold text-arcade-text placeholder:text-arcade-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
           />
         </div>
@@ -36,17 +72,25 @@ export default function ContactTerminal() {
         </label>
         <textarea
           id="message"
+          name="message"
           placeholder="> message_"
           rows={5}
+          required
           className="min-h-[170px] w-full flex-1 resize-none border-[3px] border-arcade-border bg-[#f1dfaf] px-7 py-6 text-lg font-semibold text-arcade-text placeholder:text-arcade-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
         />
+        <input type="hidden" name="_subject" value="Nova mensagem do portfolio" />
         <button
-          type="button"
-          className="inline-flex min-h-[62px] items-center gap-3 self-start border-[3px] border-arcade-greenDark bg-arcade-green px-9 py-5 font-pixel text-[12px] uppercase text-arcade-hero shadow-[6px_6px_0_rgba(37,38,28,0.38)] transition-all duration-150 hover:-translate-y-1 hover:bg-[#9bdf4f] hover:shadow-[8px_8px_0_rgba(37,38,28,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
+          type="submit"
+          disabled={status === "sending"}
+          className="inline-flex min-h-[62px] items-center gap-3 self-start border-[3px] border-arcade-greenDark bg-arcade-green px-9 py-5 font-pixel text-[12px] uppercase text-arcade-hero shadow-[6px_6px_0_rgba(37,38,28,0.38)] transition-all duration-150 hover:-translate-y-1 hover:bg-[#9bdf4f] hover:shadow-[8px_8px_0_rgba(37,38,28,0.45)] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:bg-arcade-green disabled:hover:shadow-[6px_6px_0_rgba(37,38,28,0.38)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
         >
           <Send size={18} aria-hidden="true" />
-          Send Message
+          {status === "sending" ? "Sending..." : "Send Message"}
         </button>
+        <p className="min-h-6 font-mono text-sm font-bold text-arcade-text" role="status" aria-live="polite">
+          {status === "success" && "> Mensagem enviada com sucesso!"}
+          {status === "error" && "> Erro ao enviar. Tente novamente em alguns instantes."}
+        </p>
       </form>
 
       <aside className="flex min-h-[260px] flex-col self-start border-[3px] border-arcade-border bg-[#f1dfaf] p-6 text-arcade-text shadow-[6px_6px_0_rgba(37,38,28,0.34)] lg:mt-12 lg:min-h-[312px] xl:min-h-[380px]">
