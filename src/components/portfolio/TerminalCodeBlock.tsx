@@ -92,7 +92,7 @@ export default function TerminalCodeBlock() {
         ))}
         <div className="grid grid-cols-[2rem_1fr] gap-4">
           <span className="select-none text-right text-[#6d6a58]">10</span>
-          <span className="inline-block h-4 w-2 animate-pulse bg-arcade-green" />
+          <span className="insert-caret-blink inline-block h-4 w-2 bg-arcade-green" />
         </div>
       </pre>
     </div>

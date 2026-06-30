@@ -406,6 +406,10 @@ textarea {
   animation: press-start-blink 1.1s steps(2, end) infinite;
 }
 
+.insert-caret-blink {
+  animation: insert-caret-blink 1s steps(1, end) infinite;
+}
+
 .rocket-scroll-top {
   position: fixed;
   right: 24px;
@@ -452,6 +456,18 @@ textarea {
   49%,
   100% {
     opacity: 0.28;
+  }
+}
+
+@keyframes insert-caret-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  50.01%,
+  100% {
+    opacity: 0;
   }
 }
 
