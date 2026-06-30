@@ -1,7 +1,5 @@
 import { Coffee } from "lucide-react";
-import avatar280 from "../assets/portfolio/optimized/avatar-leonardo-pixel-280.webp";
-import avatar420 from "../assets/portfolio/optimized/avatar-leonardo-pixel-420.webp";
-import avatar560 from "../assets/portfolio/optimized/avatar-leonardo-pixel-560.webp";
+import avatarGif from "../assets/portfolio/optimized/gif_Leo-cafe3.gif";
 import miniGameboyHeart220 from "../assets/portfolio/optimized/mini-gameboy-heart-220.webp";
 import miniGameboyHeart340 from "../assets/portfolio/optimized/mini-gameboy-heart-340.webp";
 import miniGameboyHeart480 from "../assets/portfolio/optimized/mini-gameboy-heart-480.webp";
@@ -17,12 +15,10 @@ export default function AboutSection() {
       <div className="grid gap-8 lg:grid-cols-[280px_180px_minmax(420px,1fr)_300px] lg:items-center">
         <div className="flex min-h-[250px] items-center justify-center border-2 border-[#4A4028] bg-[#E8D8AE] shadow-[3px_3px_0_#25261C]">
           <img
-            src={avatar420}
-            srcSet={`${avatar280} 280w, ${avatar420} 420w, ${avatar560} 560w`}
-            sizes="(min-width: 1024px) 280px, 280px"
+            src={avatarGif}
             alt="Avatar pixelado de Leonardo Bastos"
-            width={420}
-            height={440}
+            width={560}
+            height={625}
             loading="lazy"
             decoding="async"
             className="pixelated h-full max-h-[290px] w-auto object-contain"
