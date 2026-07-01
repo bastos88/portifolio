@@ -38,7 +38,7 @@ export default function ContactTerminal() {
   }
 
   return (
-    <div className="relative mt-8 grid items-end gap-8 lg:mt-12 lg:grid-cols-[minmax(0,1fr)_300px_250px] xl:grid-cols-[minmax(0,1fr)_340px_320px] xl:gap-9">
+    <div className="relative mt-8 grid items-end gap-8 lg:mt-12 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)] xl:grid-cols-[minmax(0,420px)_minmax(0,1fr)] xl:gap-9">
       <form className="flex h-full min-h-[360px] flex-col space-y-6" aria-label="Contact form" onSubmit={handleSubmit}>
         <p className="font-pixel text-[12px] leading-6 text-arcade-text">&gt; Quer iniciar uma nova missão?</p>
         <div className="grid gap-5 md:grid-cols-2">
@@ -87,42 +87,41 @@ export default function ContactTerminal() {
           <Send size={18} aria-hidden="true" />
           {status === "sending" ? "Sending..." : "Send Message"}
         </button>
-        <p className="min-h-6 font-mono text-sm font-bold text-arcade-text" role="status" aria-live="polite">
-          {status === "success" && "> Mensagem enviada com sucesso!"}
-          {status === "error" && "> Erro ao enviar. Tente novamente em alguns instantes."}
-        </p>
+
       </form>
 
-      <aside className="flex min-h-[260px] flex-col self-start border-[3px] border-arcade-border bg-[#f1dfaf] p-6 text-arcade-text shadow-[6px_6px_0_rgba(37,38,28,0.34)] lg:mt-12 lg:min-h-[312px] xl:min-h-[380px]">
-        <h3 className="mb-6 border-b border-dashed border-arcade-border pb-5 font-pixel text-[12px] uppercase">
-          Social Commands
-        </h3>
-        <div className="space-y-6">
-          {socialCommands.map(({ label, href, Icon }) => (
-            <a
-              key={label}
-              href={href}
-              className="flex items-center justify-between font-mono text-lg font-bold uppercase hover:text-arcade-greenDark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
-            >
-              <span>&gt; {label}</span>
-              <Icon size={20} strokeWidth={2.2} aria-hidden="true" />
-            </a>
-          ))}
-        </div>
-      </aside>
+      <div className="grid gap-8 lg:grid-cols-[300px_minmax(0,260px)] lg:items-end xl:grid-cols-[320px_minmax(0,260px)] xl:gap-9">
+        <aside className="flex min-h-[260px] flex-col self-start border-[3px] border-arcade-border bg-[#f1dfaf] p-6 text-arcade-text shadow-[6px_6px_0_rgba(37,38,28,0.34)] lg:mt-12 lg:min-h-[312px] xl:min-h-[375px]">
+          <h3 className="mb-6 border-b border-dashed border-arcade-border pb-5 font-pixel text-[12px] uppercase">
+            Social Commands
+          </h3>
+          <div className="space-y-6">
+            {socialCommands.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                className="flex items-center justify-between font-mono text-lg font-bold uppercase hover:text-arcade-greenDark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
+              >
+                <span>&gt; {label}</span>
+                <Icon size={20} strokeWidth={2.2} aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+        </aside>
 
-      <div className="relative z-10 flex h-full min-h-[320px] items-end justify-center pt-6 lg:absolute lg:bottom-0 lg:right-0 lg:min-h-0 lg:w-[250px] lg:justify-end xl:w-[320px]">
-        <img
-          src={crtTerminalPlant360}
-          srcSet={`${crtTerminalPlant260} 260w, ${crtTerminalPlant360} 360w, ${crtTerminalPlant520} 520w`}
-          sizes="(min-width: 1280px) 300px, (min-width: 1024px) 300px, 260px"
-          alt="Computador CRT pixelado com planta e mensagem motivacional"
-          width={360}
-          height={215}
-          loading="lazy"
-          decoding="async"
-          className="pixelated w-full max-w-[260px] object-contain drop-shadow-[4px_4px_0_rgba(37,38,28,0.4)] md:max-w-[320px] lg:max-w-[300px] xl:max-w-[300px]"
-        />
+        <div className="relative z-10 flex min-h-[260px] items-end justify-center pt-6 lg:min-h-[312px] lg:justify-end lg:pt-0 xl:min-h-[380px]">
+          <img
+            src={crtTerminalPlant360}
+            srcSet={`${crtTerminalPlant260} 260w, ${crtTerminalPlant360} 360w, ${crtTerminalPlant520} 520w`}
+            sizes="(min-width: 1024px) 260px, 260px"
+            alt="Computador CRT pixelado com planta e mensagem motivacional"
+            width={360}
+            height={215}
+            loading="eager"
+            decoding="async"
+            className="pixelated w-full max-w-[260px] object-contain drop-shadow-[4px_4px_0_rgba(37,38,28,0.4)] md:max-w-[320px] lg:max-w-[260px]"
+          />
+        </div>
       </div>
     </div>
   );

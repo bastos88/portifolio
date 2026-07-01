@@ -406,6 +406,54 @@ textarea {
   transform: scaleY(1);
 }
 
+.skills-grid-shell {
+  position: relative;
+}
+
+.skills-ghost {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  display: none;
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(2px 2px 0 rgba(37, 38, 28, 0.45));
+  transition-property: transform;
+  transition-timing-function: linear;
+}
+
+.skills-ghost__frame {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: repeat(14, 1fr);
+}
+
+.skills-ghost__frame span {
+  width: 100%;
+  height: 100%;
+}
+
+.skills-ghost__frame--two {
+  opacity: 0;
+  animation: skills-ghost-feet 0.75s step-start infinite;
+}
+
+@media (min-width: 1024px) {
+  .skills-ghost {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-ghost {
+    display: none;
+  }
+}
+
 .section-divider {
   background-image: repeating-linear-gradient(
     90deg,
@@ -482,6 +530,12 @@ textarea {
   50.01%,
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes skills-ghost-feet {
+  50% {
+    opacity: 1;
   }
 }
 

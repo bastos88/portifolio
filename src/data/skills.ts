@@ -8,11 +8,14 @@ import {
   SiHtml5,
   SiJavascript,
   SiNodedotjs,
+  SiPhp,
   SiPostgresql,
   SiPrisma,
+  SiPython,
   SiReact,
   SiTypescript,
 } from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 
 export const skills: readonly PortfolioSkill[] = [
   { id: "html", name: "HTML5", level: 10, icon: SiHtml5, color: "#E34F26" },
@@ -20,6 +23,9 @@ export const skills: readonly PortfolioSkill[] = [
   { id: "javascript", name: "JAVASCRIPT", level: 9, icon: SiJavascript, color: "#F7DF1E" },
   { id: "typescript", name: "TYPESCRIPT", level: 8, icon: SiTypescript, color: "#3178C6" },
   { id: "react", name: "REACT", level: 8, icon: SiReact, color: "#61DAFB" },
+  { id: "php", name: "PHP", level: 6, icon: SiPhp, color: "#777BB4" },
+  { id: "java", name: "JAVA", level: 6, icon: FaJava, color: "#E76F00" },
+  { id: "python", name: "PYTHON", level: 6, icon: SiPython, color: "#3776AB" },
   { id: "node", name: "NODE.JS", level: 7, icon: SiNodedotjs, color: "#5FA04E" },
   { id: "express", name: "EXPRESS", level: 7, icon: SiExpress, color: "#252525" },
   { id: "postgresql", name: "POSTGRESQL", level: 7, icon: SiPostgresql, color: "#4169E1" },

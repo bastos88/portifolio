@@ -49,11 +49,11 @@ export default function AboutSection() {
           </div>
           <div className="border-b-2 border-arcade-border p-5">
             <p className="mb-4 font-pixel text-[10px] uppercase">Energy:</p>
-            <div className="energy-bar flex flex-wrap gap-1.5" aria-hidden="true">
+            <div className="energy-bar grid grid-cols-10 gap-1.5" aria-hidden="true">
               {Array.from({ length: 10 }, (_, index) => (
                 <span
                   key={`energy-${index}`}
-                  className={`energy-bar__segment h-3 w-5 border border-arcade-greenDark bg-arcade-green ${
+                  className={`energy-bar__segment h-3 w-full border border-arcade-greenDark bg-arcade-green ${
                     index < visibleEnergySegments ? "energy-bar__segment--active" : ""
                   }`}
                 />
