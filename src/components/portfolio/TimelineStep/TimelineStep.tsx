@@ -1,4 +1,4 @@
-import type { TimelineItem } from "../../types/portfolio";
+import type { TimelineItem } from "../../../types/portfolio";
 
 type TimelineStepProps = {
   item: TimelineItem;

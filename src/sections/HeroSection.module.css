@@ -1,0 +1,34 @@
+.crtFrame {
+  border: 4px solid #070806;
+  clip-path: polygon(
+    0 18px,
+    18px 18px,
+    18px 0,
+    calc(100% - 18px) 0,
+    calc(100% - 18px) 18px,
+    100% 18px,
+    100% calc(100% - 18px),
+    calc(100% - 18px) calc(100% - 18px),
+    calc(100% - 18px) 100%,
+    18px 100%,
+    18px calc(100% - 18px),
+    0 calc(100% - 18px)
+  );
+  box-shadow:
+    0 0 0 2px #343624,
+    0 0 0 5px #0a0b08,
+    0 0 0 7px #2a291c,
+    0 18px 0 rgba(0, 0, 0, 0.42);
+}
+
+.crtFrame::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    linear-gradient(90deg, rgba(255, 245, 214, 0.1), transparent 5rem, transparent calc(100% - 5rem), rgba(255, 245, 214, 0.08)),
+    repeating-linear-gradient(180deg, transparent 0, transparent 3px, rgba(0, 0, 0, 0.36) 4px, rgba(0, 0, 0, 0.36) 5px);
+  opacity: 0.38;
+}

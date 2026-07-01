@@ -1,7 +1,8 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
-import rocket72 from "../../assets/portfolio/optimized/rocket-72.webp";
-import rocket144 from "../../assets/portfolio/optimized/rocket-144.webp";
+import rocket72 from "../../../assets/portfolio/optimized/rocket-72.webp";
+import rocket144 from "../../../assets/portfolio/optimized/rocket-144.webp";
+import floatingActionButtonStyles from "../../ui/buttons/FloatingActionButton/FloatingActionButton.module.css";
 
 type RocketScrollTopProps = {
   targetId: string;
@@ -142,7 +143,7 @@ export default function RocketScrollTop({ targetId, triggerId }: RocketScrollTop
           type="button"
           title="Back to Home"
           aria-label="Voltar para o topo da página"
-          className="rocket-scroll-top"
+          className={floatingActionButtonStyles.button}
           onClick={handleScrollTop}
           initial={shouldReduceMotion ? false : { opacity: 0, y: 14, scale: 0.92 }}
           animate={
@@ -164,7 +165,7 @@ export default function RocketScrollTop({ targetId, triggerId }: RocketScrollTop
             height={72}
             alt=""
             aria-hidden="true"
-            className="rocket-scroll-top__image"
+            className={floatingActionButtonStyles.image}
           />
         </motion.button>
       ) : null}

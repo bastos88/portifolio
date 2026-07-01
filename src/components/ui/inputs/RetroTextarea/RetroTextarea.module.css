@@ -1,0 +1,12 @@
+.field {
+  font: inherit;
+}
+
+.field::placeholder {
+  color: #2e2a1f;
+}
+
+.field:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}

@@ -1,9 +1,12 @@
 import { FormEvent, useState } from "react";
 import { Send } from "lucide-react";
-import crtTerminalPlant260 from "../../assets/portfolio/optimized/retro-monitor-plant-260.webp";
-import crtTerminalPlant360 from "../../assets/portfolio/optimized/retro-monitor-plant-360.webp";
-import crtTerminalPlant520 from "../../assets/portfolio/optimized/retro-monitor-plant-520.webp";
-import { socialCommands } from "../../constants/socialCommands";
+import crtTerminalPlant260 from "../../../assets/portfolio/optimized/retro-monitor-plant-260.webp";
+import crtTerminalPlant360 from "../../../assets/portfolio/optimized/retro-monitor-plant-360.webp";
+import crtTerminalPlant520 from "../../../assets/portfolio/optimized/retro-monitor-plant-520.webp";
+import { socialCommands } from "../../../constants/socialCommands";
+import SubmitButton from "../../ui/buttons/SubmitButton";
+import RetroTextField from "../../ui/inputs/RetroTextField";
+import RetroTextarea from "../../ui/inputs/RetroTextarea";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvzjbjow";
 
@@ -45,49 +48,40 @@ export default function ContactTerminal() {
           <label className="sr-only" htmlFor="name">
             Nome
           </label>
-          <input
+          <RetroTextField
             id="name"
             name="name"
             type="text"
             autoComplete="name"
             placeholder="> name_"
             required
-            className="min-h-[66px] border-[3px] border-arcade-border bg-[#f1dfaf] px-3 py-5 text-md font-semibold text-arcade-text placeholder:text-arcade-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
           />
           <label className="sr-only" htmlFor="email">
             Email
           </label>
-          <input
+          <RetroTextField
             id="email"
             name="email"
             type="email"
             autoComplete="email"
             placeholder="> email_"
             required
-            className="min-h-[66px] border-[3px] border-arcade-border bg-[#f1dfaf] px-3 py-5 text-md font-semibold text-arcade-text placeholder:text-arcade-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
           />
         </div>
         <label className="sr-only" htmlFor="message">
           Mensagem
         </label>
-        <textarea
+        <RetroTextarea
           id="message"
           name="message"
           placeholder="> message_"
           rows={5}
           required
-          className="min-h-[170px] w-full flex-1 resize-none border-[3px] border-arcade-border bg-[#f1dfaf] px-7 py-6 text-lg font-semibold text-arcade-text placeholder:text-arcade-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
         />
         <input type="hidden" name="_subject" value="Nova mensagem do portfolio" />
-        <button
-          type="submit"
-          disabled={status === "sending"}
-          className="inline-flex min-h-[62px] items-center gap-3 self-start border-[3px] border-arcade-greenDark bg-arcade-green px-9 py-5 font-pixel text-[12px] uppercase text-arcade-hero shadow-[6px_6px_0_rgba(37,38,28,0.38)] transition-all duration-150 hover:-translate-y-1 hover:bg-[#9bdf4f] hover:shadow-[8px_8px_0_rgba(37,38,28,0.45)] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:bg-arcade-green disabled:hover:shadow-[6px_6px_0_rgba(37,38,28,0.38)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
-        >
-          <Send size={18} aria-hidden="true" />
-          {status === "sending" ? "Sending..." : "Send Message"}
-        </button>
-
+        <SubmitButton loading={status === "sending"} icon={<Send size={18} aria-hidden="true" />}>
+          Send Message
+        </SubmitButton>
       </form>
 
       <div className="grid gap-8 lg:grid-cols-[300px_minmax(0,260px)] lg:items-end xl:grid-cols-[320px_minmax(0,260px)] xl:gap-9">

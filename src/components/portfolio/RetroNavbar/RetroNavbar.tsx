@@ -1,14 +1,12 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import logo320 from "../../assets/portfolio/optimized/logo-leonardo-8bit-transparent-320.webp";
-import logo480 from "../../assets/portfolio/optimized/logo-leonardo-8bit-transparent-480.webp";
-import logo640 from "../../assets/portfolio/optimized/logo-leonardo-8bit-transparent-640.webp";
-import { navItems } from "../../constants/navigation";
-import type { SectionId } from "../../types/portfolio";
-
-function cn(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(" ");
-}
+import logo320 from "../../../assets/portfolio/optimized/logo-leonardo-8bit-transparent-320.webp";
+import logo480 from "../../../assets/portfolio/optimized/logo-leonardo-8bit-transparent-480.webp";
+import logo640 from "../../../assets/portfolio/optimized/logo-leonardo-8bit-transparent-640.webp";
+import { navItems } from "../../../constants/navigation";
+import type { SectionId } from "../../../types/portfolio";
+import { cn } from "../../../lib/cn";
+import styles from "./RetroNavbar.module.css";
 
 export default function RetroNavbar() {
   const [open, setOpen] = useState(false);
@@ -23,7 +21,7 @@ export default function RetroNavbar() {
 
     if (!section) return;
 
-    const navbar = document.querySelector<HTMLElement>(".navbar");
+    const navbar = document.querySelector<HTMLElement>("[data-main-navbar]");
     const heading = sectionId === "home" ? section : section.querySelector<HTMLElement>("h1, h2");
     const target = heading ?? section;
     const navbarHeight = navbar?.getBoundingClientRect().height ?? 0;
@@ -93,14 +91,14 @@ export default function RetroNavbar() {
   }, []);
 
   return (
-    <header className={cn("navbar", isPastHero && "navbar-scrolled")}>
+    <header data-main-navbar className={cn(styles.navbar, isPastHero && styles.scrolled)}>
       <nav
         className="mx-auto flex min-h-[68px] max-w-7xl items-center justify-between gap-6 px-5 py-2 lg:px-10"
         aria-label="Navegação principal"
       >
         <a
           href="#home"
-          className="navbar-logo-link flex shrink-0 items-center px-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green"
+          className={cn(styles.logoLink, "flex shrink-0 items-center px-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green")}
           aria-label="Leonardo - voltar ao início"
         >
           <img
@@ -111,13 +109,13 @@ export default function RetroNavbar() {
             width={480}
             height={210}
             decoding="async"
-            className="navbar-logo h-12 w-auto max-w-[180px] object-contain md:max-w-[230px] lg:h-14 lg:max-w-[280px]"
+            className={cn(styles.logo, "h-12 w-auto max-w-[180px] object-contain md:max-w-[230px] lg:h-14 lg:max-w-[280px]")}
           />
         </a>
 
         <button
           type="button"
-          className="navbar-menu-button border p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green md:hidden"
+          className={cn(styles.menuButton, "border p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green lg:hidden")}
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
@@ -129,7 +127,8 @@ export default function RetroNavbar() {
         <div
           id="main-navigation"
           className={cn(
-            "navbar-nav-panel absolute left-0 right-0 top-full flex-col p-4 md:static md:flex md:flex-row md:border-0 md:bg-transparent md:p-0 lg:items-center lg:gap-5",
+            styles.navPanel,
+            "absolute left-0 right-0 top-full flex-col p-4 lg:static lg:flex lg:flex-row lg:border-0 lg:bg-transparent lg:p-0 lg:items-center lg:gap-5",
             open ? "flex" : "hidden",
           )}
         >
@@ -146,9 +145,10 @@ export default function RetroNavbar() {
                 }}
                 aria-current={activeSection === sectionId ? "page" : undefined}
                 className={cn(
-                  "navbar-link flex items-center gap-2 px-3 py-3 font-pixel text-[9px] uppercase tracking-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green md:py-2",
-                  activeSection === sectionId && "navbar-link-active",
-                  index === navItems.length - 1 && "navbar-link-cta",
+                  styles.link,
+                  "flex items-center gap-2 px-3 py-3 font-pixel text-[9px] uppercase tracking-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green lg:py-2",
+                  activeSection === sectionId && styles.active,
+                  index === navItems.length - 1 && styles.cta,
                 )}
               >
                 <Icon size={12} aria-hidden="true" />

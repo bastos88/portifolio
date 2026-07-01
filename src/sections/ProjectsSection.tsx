@@ -5,10 +5,13 @@ import {
   useState,
   type TransitionEvent,
 } from "react";
-import PixelPanel from "../components/portfolio/PixelPanel";
-import PixelSectionTitle from "../components/portfolio/PixelSectionTitle";
-import ProjectStageCard from "../components/portfolio/ProjectStageCard";
+import PixelPanel from "../components/portfolio/PixelPanel/index";
+import PixelSectionTitle from "../components/portfolio/PixelSectionTitle/index";
+import ProjectStageCard from "../components/portfolio/ProjectStageCard/index";
+import IconButton from "../components/ui/buttons/IconButton";
 import { projects } from "../data/projects";
+import { cn } from "../lib/cn";
+import styles from "./ProjectsSection.module.css";
 
 type Direction = "previous" | "next";
 
@@ -142,19 +145,18 @@ export default function ProjectsSection() {
       />
 
       <div className="relative">
-        <button
-          type="button"
+        <IconButton
           onClick={() => moveCarousel("previous")}
           aria-label="Ver projeto anterior"
           disabled={isMoving || slideStep === 0}
-          className="absolute left-1 top-24 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center border-2 border-arcade-border bg-arcade-dark font-pixel text-xl leading-none text-arcade-yellow shadow-pixel transition-transform hover:-translate-y-[55%] hover:bg-arcade-panel disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green xl:left-[-42px] xl:top-1/2 xl:h-auto xl:w-auto xl:px-3 xl:py-2 xl:text-2xl"
+          className="absolute left-1 top-24 z-10 h-10 w-10 -translate-y-1/2 text-xl xl:left-[-42px] xl:top-1/2 xl:h-auto xl:w-auto xl:px-3 xl:py-2 xl:text-2xl"
         >
           &lsaquo;
-        </button>
+        </IconButton>
 
         <div
           ref={viewportRef}
-          className="carousel-viewport mx-auto max-w-[285px] overflow-hidden sm:max-w-none"
+          className={cn(styles.viewport, "mx-auto max-w-[285px] overflow-hidden sm:max-w-none")}
           style={{ touchAction: "pan-y" }}
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerUp}
@@ -185,15 +187,14 @@ export default function ProjectsSection() {
           </div>
         </div>
 
-        <button
-          type="button"
+        <IconButton
           onClick={() => moveCarousel("next")}
           aria-label="Ver próximo projeto"
           disabled={isMoving || slideStep === 0}
-          className="absolute right-1 top-24 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center border-2 border-arcade-border bg-arcade-dark font-pixel text-xl leading-none text-arcade-yellow shadow-pixel transition-transform hover:-translate-y-[55%] hover:bg-arcade-panel disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arcade-green xl:right-[-42px] xl:top-1/2 xl:h-auto xl:w-auto xl:px-3 xl:py-2 xl:text-2xl"
+          className="absolute right-1 top-24 z-10 h-10 w-10 -translate-y-1/2 text-xl xl:right-[-42px] xl:top-1/2 xl:h-auto xl:w-auto xl:px-3 xl:py-2 xl:text-2xl"
         >
           &rsaquo;
-        </button>
+        </IconButton>
       </div>
     </PixelPanel>
   );

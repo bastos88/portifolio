@@ -1,0 +1,9 @@
+.divider {
+  background-image: repeating-linear-gradient(
+    90deg,
+    currentColor 0,
+    currentColor 5px,
+    transparent 5px,
+    transparent 9px
+  );
+}

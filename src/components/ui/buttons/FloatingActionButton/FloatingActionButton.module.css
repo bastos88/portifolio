@@ -1,0 +1,54 @@
+.button {
+  position: fixed;
+  right: 24px;
+  bottom: 28px;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 88px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  image-rendering: pixelated;
+  outline-offset: 6px;
+  filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.38));
+  will-change: transform, opacity;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.button:focus-visible {
+  outline: 3px solid #82c93a;
+}
+
+.image {
+  display: block;
+  width: 72px;
+  height: auto;
+  image-rendering: pixelated;
+  transition: filter 180ms ease;
+}
+
+.button:hover .image {
+  filter:
+    drop-shadow(0 0 5px rgba(232, 195, 72, 0.82))
+    drop-shadow(0 0 3px rgba(130, 201, 58, 0.55));
+}
+
+@media (max-width: 767px) {
+  .button {
+    right: 14px;
+    bottom: max(18px, env(safe-area-inset-bottom));
+    width: 52px;
+    height: 66px;
+  }
+
+  .image {
+    width: 52px;
+  }
+}

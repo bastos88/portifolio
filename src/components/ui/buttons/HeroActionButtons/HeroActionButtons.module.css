@@ -1,0 +1,85 @@
+.startButton,
+.projectsButton,
+.downloadButton {
+  inline-size: 11.75rem;
+  min-height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-width: 2px;
+  border-style: solid;
+  padding: 0.75rem 1rem;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.625rem;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.35);
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.startButton {
+  border-color: #376d24;
+  background: #82c93a;
+  color: #0e0f0b;
+}
+
+.startButton:hover {
+  background: #9bdf4f;
+  transform: translateY(-2px);
+}
+
+.projectsButton {
+  border-color: #e8c348;
+  background: transparent;
+  color: #e8c348;
+}
+
+.projectsButton:hover {
+  background: #e8c348;
+  color: #0e0f0b;
+  transform: translateY(-2px);
+}
+
+.downloadButton {
+  border-color: #8d7850;
+  background: rgba(255, 245, 214, 0.1);
+  color: #fff5d6;
+}
+
+.downloadButton:hover {
+  border-color: #e8c348;
+  background: #e8c348;
+  color: #0e0f0b;
+  transform: translateY(-2px);
+}
+
+.startButton:active,
+.projectsButton:active,
+.downloadButton:active {
+  transform: translateY(0.25rem);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
+}
+
+.startButton:focus-visible,
+.projectsButton:focus-visible,
+.downloadButton:focus-visible {
+  outline: 2px solid #82c93a;
+  outline-offset: 4px;
+}
+
+@media (min-width: 1280px) {
+  .startButton,
+  .projectsButton,
+  .downloadButton {
+    inline-size: 13.5rem;
+    min-height: 3rem;
+    padding-inline: 1.5rem;
+    font-size: 0.68rem;
+  }
+}

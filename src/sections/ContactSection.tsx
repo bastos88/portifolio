@@ -1,6 +1,6 @@
-import ContactTerminal from "../components/portfolio/ContactTerminal";
-import PixelPanel from "../components/portfolio/PixelPanel";
-import PixelSectionTitle from "../components/portfolio/PixelSectionTitle";
+import ContactTerminal from "../components/portfolio/ContactTerminal/index";
+import PixelPanel from "../components/portfolio/PixelPanel/index";
+import PixelSectionTitle from "../components/portfolio/PixelSectionTitle/index";
 
 export default function ContactSection() {
   return (

@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { cn } from "../../../lib/cn";
+import styles from "./PixelGhost.module.css";
 
 const ghostFrameOne = [
   0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0,
@@ -202,7 +204,7 @@ export default function PixelGhost({ id, bodyColor, initialNodeIndex = 0, startD
   return (
     <div
       ref={ghostRef}
-      className="skills-ghost"
+      className={styles.ghost}
       style={{
         transform: currentNode
           ? `translate3d(${currentNode.x - GHOST_SIZE / 2}px, ${currentNode.y - GHOST_SIZE / 2}px, 0)`
@@ -212,7 +214,7 @@ export default function PixelGhost({ id, bodyColor, initialNodeIndex = 0, startD
       onTransitionEnd={moveToNextNode}
       aria-hidden="true"
     >
-      <div className="skills-ghost__frame skills-ghost__frame--one">
+      <div className={styles.frame}>
         {ghostFrameOne.map((pixel, index) => (
           <span
             key={`ghost-one-${index}`}
@@ -221,7 +223,7 @@ export default function PixelGhost({ id, bodyColor, initialNodeIndex = 0, startD
           />
         ))}
       </div>
-      <div className="skills-ghost__frame skills-ghost__frame--two">
+      <div className={cn(styles.frame, styles.frameTwo)}>
         {ghostFrameTwo.map((pixel, index) => (
           <span
             key={`ghost-two-${index}`}

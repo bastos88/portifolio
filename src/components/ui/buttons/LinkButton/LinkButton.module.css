@@ -1,0 +1,47 @@
+.button {
+  border-width: 1px;
+  border-style: solid;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    opacity 160ms ease;
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+.primary {
+  border-color: #376d24;
+  background: #82c93a;
+  color: #0e0f0b;
+}
+
+.primary:hover:not(:disabled) {
+  background: #9bdf4f;
+}
+
+.primaryDisabled {
+  border-color: #376d24;
+  background: rgba(130, 201, 58, 0.5);
+  color: rgba(14, 15, 11, 0.7);
+}
+
+.secondary {
+  border-color: #e8c348;
+  background: transparent;
+  color: #e8c348;
+}
+
+.secondary:hover:not(:disabled) {
+  background: #e8c348;
+  color: #0e0f0b;
+}
+
+.secondaryDisabled {
+  border-color: rgba(232, 195, 72, 0.5);
+  background: transparent;
+  color: rgba(232, 195, 72, 0.5);
+}

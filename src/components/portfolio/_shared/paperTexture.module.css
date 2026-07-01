@@ -1,0 +1,9 @@
+.paperTexture {
+  background-color: #f0e3be;
+  background-image:
+    linear-gradient(rgba(46, 42, 31, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 42, 31, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at 18% 22%, rgba(216, 137, 49, 0.1), transparent 13rem),
+    radial-gradient(circle at 78% 36%, rgba(232, 195, 72, 0.12), transparent 18rem);
+  background-size: 18px 18px, 18px 18px, auto, auto;
+}

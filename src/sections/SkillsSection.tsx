@@ -1,14 +1,15 @@
-import PixelPanel from "../components/portfolio/PixelPanel";
-import PixelSectionTitle from "../components/portfolio/PixelSectionTitle";
-import PixelGhost from "../components/portfolio/PixelGhost";
-import SkillCard from "../components/portfolio/SkillCard";
+import PixelPanel from "../components/portfolio/PixelPanel/index";
+import PixelSectionTitle from "../components/portfolio/PixelSectionTitle/index";
+import PixelGhost from "../components/portfolio/PixelGhost/index";
+import SkillCard from "../components/portfolio/SkillCard/index";
 import { skills } from "../data/skills";
+import styles from "./SkillsSection.module.css";
 
 export default function SkillsSection() {
   return (
     <PixelPanel id="skills">
       <PixelSectionTitle number="02" title="Skills Unlocked" />
-      <div className="skills-grid-shell">
+      <div className={styles.gridShell}>
         <div className="grid grid-cols-2 gap-7 md:grid-cols-3 md:justify-center md:[grid-template-columns:repeat(3,minmax(0,190px))] lg:[grid-template-columns:repeat(5,minmax(0,180px))] xl:[grid-template-columns:repeat(5,minmax(0,200px))]">
           {skills.map((skill) => (
             <SkillCard key={skill.id} skill={skill} />

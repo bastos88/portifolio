@@ -1,0 +1,44 @@
+.button {
+  border: 3px solid #376d24;
+  background: #82c93a;
+  color: #0e0f0b;
+  box-shadow: 6px 6px 0 rgba(37, 38, 28, 0.38);
+  transition:
+    background-color 150ms ease,
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    opacity 150ms ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-0.25rem);
+  background: #9bdf4f;
+  box-shadow: 8px 8px 0 rgba(37, 38, 28, 0.45);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0.125rem);
+  box-shadow: 4px 4px 0 rgba(37, 38, 28, 0.38);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  background: #82c93a;
+  box-shadow: 6px 6px 0 rgba(37, 38, 28, 0.38);
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: submit-button-spin 700ms steps(8, end) infinite;
+}
+
+@keyframes submit-button-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}

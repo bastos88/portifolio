@@ -1,4 +1,5 @@
-import type { PortfolioSkill } from "../../types/portfolio";
+import type { PortfolioSkill } from "../../../types/portfolio";
+import { cn } from "../../../lib/cn";
 
 type SkillCardProps = {
   skill: PortfolioSkill;
@@ -35,7 +36,10 @@ export default function SkillCard({ skill }: SkillCardProps) {
           {Array.from({ length: 10 }, (_, index) => (
             <span
               key={index}
-              className={`size-[clamp(0.3rem,0.55vw,0.48rem)] border ${index < skill.level ? "border-[#376D24] bg-[#82C93A]" : "border-[#807852] bg-transparent"}`}
+              className={cn(
+                "size-[clamp(0.3rem,0.55vw,0.48rem)] border",
+                index < skill.level ? "border-[#376D24] bg-[#82C93A]" : "border-[#807852] bg-transparent",
+              )}
             />
           ))}
         </div>

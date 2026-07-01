@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
-import RetroNavbar from "../components/portfolio/RetroNavbar";
-import StatusFooter from "../components/portfolio/StatusFooter";
+import RetroNavbar from "../components/portfolio/RetroNavbar/index";
+import StatusFooter from "../components/portfolio/StatusFooter/index";
 import AboutSection from "../sections/AboutSection";
 import ContactSection from "../sections/ContactSection";
 import ExperienceSection from "../sections/ExperienceSection";
@@ -9,7 +9,7 @@ import ProjectsSection from "../sections/ProjectsSection";
 import SkillsSection from "../sections/SkillsSection";
 import SourceCodeSection from "../sections/SourceCodeSection";
 
-const RocketScrollTop = lazy(() => import("../components/portfolio/RocketScrollTop"));
+const RocketScrollTop = lazy(() => import("../components/portfolio/RocketScrollTop/index"));
 
 export default function PortfolioArcade() {
   return (

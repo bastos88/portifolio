@@ -1,0 +1,23 @@
+.button {
+  border: 2px solid #25261c;
+  background: #171811;
+  color: #e8c348;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.35);
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease,
+    opacity 160ms ease;
+}
+
+.button:hover:not(:disabled) {
+  background: #f0e3be;
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(-45%);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

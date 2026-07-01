@@ -1,3 +1,5 @@
+import styles from "./PixelSectionTitle.module.css";
+
 type PixelSectionTitleProps = {
   number: string;
   title: string;
@@ -11,7 +13,7 @@ export default function PixelSectionTitle({ number, title, aside }: PixelSection
         {number}
       </span>
       <h2 className="font-pixel text-xl uppercase leading-tight md:text-[1.7rem]">{title}</h2>
-      <div className="section-divider h-[2px] min-w-8 flex-1 opacity-60" />
+      <div className={`${styles.divider} h-[2px] min-w-8 flex-1 opacity-60`} />
       {aside ? <span className="hidden font-pixel text-[11px] uppercase md:block">{aside}</span> : null}
     </div>
   );

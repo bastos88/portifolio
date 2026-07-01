@@ -1,15 +1,16 @@
-import { Download, Gamepad2, Play } from "lucide-react";
 import cvPdf from "../assets/leonardo-bastos-cv.pdf";
 import heroBg640 from "../assets/portfolio/optimized/hero-arcade-bg-640.webp";
 import heroBg960 from "../assets/portfolio/optimized/hero-arcade-bg-960.webp";
 import heroBg1280 from "../assets/portfolio/optimized/hero-arcade-bg-1280.webp";
-import HudCard from "../components/portfolio/HudCard";
-import RetroButton from "../components/portfolio/RetroButton";
+import { DownloadCvButton, StartGameButton, ViewProjectsButton } from "../components/ui/buttons/HeroActionButtons/index";
+import HudCard from "../components/portfolio/HudCard/index";
+import { cn } from "../lib/cn";
+import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
   return (
     <section id="home" className="relative isolate mx-auto max-w-[1360px] overflow-hidden bg-[#0E0F0B] px-3 py-3 md:px-4 md:py-4">
-      <div className="hero-crt-frame relative min-h-[620px] overflow-hidden bg-[#11120E] md:min-h-[650px] lg:min-h-[700px]">
+      <div className={cn(styles.crtFrame, "relative min-h-[620px] overflow-hidden bg-[#11120E] md:min-h-[650px] lg:min-h-[700px]")}>
         <img
           src={heroBg1280}
           srcSet={`${heroBg640} 640w, ${heroBg960} 960w, ${heroBg1280} 1280w`}
@@ -53,25 +54,14 @@ export default function HeroSection() {
               Construindo experiências digitais com código, criatividade e lógica.
             </p>
             <div className="flex flex-wrap items-start gap-5 xl:gap-6">
-              <RetroButton href="#about" className="xl:min-h-12 xl:px-6 xl:text-[11px]">
-                <Play size={14} aria-hidden="true" />
-                Start Game
-              </RetroButton>
-              <RetroButton href="#projects" variant="outline" className="xl:min-h-12 xl:px-6 xl:text-[11px]">
-                <Gamepad2 size={14} aria-hidden="true" />
-                View Projects
-              </RetroButton>
+              <StartGameButton href="#about" />
+              <ViewProjectsButton href="#projects" />
               <div className="flex flex-col items-start gap-2">
-                <RetroButton
+                <DownloadCvButton
                   href={cvPdf}
                   download="leonardo-bastos-cv.pdf"
-                  variant="download"
                   title="CV.PDF AVAILABLE"
-                  className="xl:min-h-12 xl:px-6 xl:text-[11px]"
-                >
-                  <Download size={14} aria-hidden="true" />
-                  Download CV
-                </RetroButton>
+                />
                 <span className="font-pixel text-[8px] uppercase leading-none text-arcade-yellow/85">
                   CV.PDF Available
                 </span>

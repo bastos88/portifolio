@@ -4,11 +4,13 @@ import avatarGif from "../assets/portfolio/optimized/gif_Leo-cafe3.gif";
 import miniGameboyHeart220 from "../assets/portfolio/optimized/mini-gameboy-heart-220.webp";
 import miniGameboyHeart340 from "../assets/portfolio/optimized/mini-gameboy-heart-340.webp";
 import miniGameboyHeart480 from "../assets/portfolio/optimized/mini-gameboy-heart-480.webp";
-import PixelPanel from "../components/portfolio/PixelPanel";
-import PixelProgressBar from "../components/portfolio/PixelProgressBar";
-import PixelSectionTitle from "../components/portfolio/PixelSectionTitle";
+import PixelPanel from "../components/portfolio/PixelPanel/index";
+import PixelProgressBar from "../components/portfolio/PixelProgressBar/index";
+import PixelSectionTitle from "../components/portfolio/PixelSectionTitle/index";
 import { profileBars } from "../data/profile";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
+import { cn } from "../lib/cn";
+import styles from "./AboutSection.module.css";
 
 export default function AboutSection() {
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -42,20 +44,22 @@ export default function AboutSection() {
             className="pixelated h-full max-h-[290px] w-auto object-contain"
           />
         </div>
-        <div className="arcade-code border-2 border-arcade-border bg-[#f1dfaf] text-arcade-text shadow-pixel">
+        <div className={cn(styles.arcadeCode, "border-2 border-arcade-border bg-[#f1dfaf] text-arcade-text shadow-pixel")}>
           <div className="border-b-2 border-arcade-border p-5">
             <p className="mb-1 font-pixel text-[10px] uppercase leading-5">Status:</p>
             <p className="font-pixel text-[12px] uppercase text-arcade-greenDark">Coding</p>
           </div>
           <div className="border-b-2 border-arcade-border p-5">
             <p className="mb-4 font-pixel text-[10px] uppercase">Energy:</p>
-            <div className="energy-bar grid grid-cols-10 gap-1.5" aria-hidden="true">
+            <div className="grid grid-cols-10 gap-1.5" aria-hidden="true">
               {Array.from({ length: 10 }, (_, index) => (
                 <span
                   key={`energy-${index}`}
-                  className={`energy-bar__segment h-3 w-full border border-arcade-greenDark bg-arcade-green ${
-                    index < visibleEnergySegments ? "energy-bar__segment--active" : ""
-                  }`}
+                  className={cn(
+                    styles.energySegment,
+                    "h-3 w-full border border-arcade-greenDark bg-arcade-green",
+                    index < visibleEnergySegments && styles.energySegmentActive,
+                  )}
                 />
               ))}
             </div>

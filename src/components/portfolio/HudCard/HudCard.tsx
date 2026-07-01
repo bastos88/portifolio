@@ -1,8 +1,11 @@
-import PixelProgressBar from "./PixelProgressBar";
+import PixelProgressBar from "../PixelProgressBar";
+import { cn } from "../../../lib/cn";
+import styles from "./HudCard.module.css";
+import paperTextureStyles from "../_shared/paperTexture.module.css";
 
 export default function HudCard() {
   return (
-    <aside className="hud-pixel-frame paper-texture p-6 text-arcade-text md:min-w-[360px] lg:min-w-[390px] xl:min-w-[430px]">
+    <aside className={cn(styles.frame, paperTextureStyles.paperTexture, "p-6 text-arcade-text md:min-w-[360px] lg:min-w-[390px] xl:min-w-[430px]")}>
       <div className="relative z-10">
         <h2 className="mb-3 font-pixel text-base uppercase xl:mb-4 xl:text-lg">Player HUD</h2>
         <div className="mb-5 grid grid-cols-[5rem_minmax(0,1fr)] gap-x-4 gap-y-3 border-t-2 border-dashed border-arcade-border pt-4 font-pixel text-[13px] uppercase xl:mb-6 xl:pt-5 xl:text-[14px]">
