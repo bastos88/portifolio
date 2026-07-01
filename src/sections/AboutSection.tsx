@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Coffee } from "lucide-react";
 import avatarGif from "../assets/portfolio/optimized/gif_Leo-cafe3.gif";
 import miniGameboyHeart220 from "../assets/portfolio/optimized/mini-gameboy-heart-220.webp";
@@ -7,8 +8,25 @@ import PixelPanel from "../components/portfolio/PixelPanel";
 import PixelProgressBar from "../components/portfolio/PixelProgressBar";
 import PixelSectionTitle from "../components/portfolio/PixelSectionTitle";
 import { profileBars } from "../data/profile";
+import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
 export default function AboutSection() {
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const [visibleEnergySegments, setVisibleEnergySegments] = useState(1);
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setVisibleEnergySegments(10);
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setVisibleEnergySegments((current) => (current === 10 ? 1 : current + 1));
+    }, 420);
+
+    return () => window.clearInterval(intervalId);
+  }, [prefersReducedMotion]);
+
   return (
     <PixelPanel id="about" className="rounded-t-sm">
       <PixelSectionTitle number="01" title="Player Profile" />
@@ -31,9 +49,14 @@ export default function AboutSection() {
           </div>
           <div className="border-b-2 border-arcade-border p-5">
             <p className="mb-4 font-pixel text-[10px] uppercase">Energy:</p>
-            <div className="flex flex-wrap gap-1.5" aria-hidden="true">
-              {Array.from({ length: 8 }, (_, index) => (
-                <span key={`energy-${index}`} className="h-3 w-5 border border-arcade-greenDark bg-arcade-green" />
+            <div className="energy-bar flex flex-wrap gap-1.5" aria-hidden="true">
+              {Array.from({ length: 10 }, (_, index) => (
+                <span
+                  key={`energy-${index}`}
+                  className={`energy-bar__segment h-3 w-5 border border-arcade-greenDark bg-arcade-green ${
+                    index < visibleEnergySegments ? "energy-bar__segment--active" : ""
+                  }`}
+                />
               ))}
             </div>
           </div>

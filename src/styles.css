@@ -392,6 +392,20 @@ textarea {
   height: 18.7rem;
 }
 
+.energy-bar__segment {
+  transform-origin: bottom;
+  opacity: 0.25;
+  transform: scaleY(0.2);
+  transition:
+    opacity 120ms steps(1, end),
+    transform 120ms steps(2, end);
+}
+
+.energy-bar__segment--active {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
 .section-divider {
   background-image: repeating-linear-gradient(
     90deg,
