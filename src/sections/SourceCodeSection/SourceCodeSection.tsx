@@ -1,7 +1,7 @@
 import { Code2 } from "lucide-react";
-import PixelPanel from "../components/portfolio/PixelPanel/index";
-import PixelSectionTitle from "../components/portfolio/PixelSectionTitle/index";
-import TerminalCodeBlock from "../components/portfolio/TerminalCodeBlock/index";
+import PixelPanel from "../../components/portfolio/PixelPanel/PixelPanel";
+import PixelSectionTitle from "../../components/portfolio/PixelSectionTitle/PixelSectionTitle";
+import TerminalCodeBlock from "../../components/portfolio/TerminalCodeBlock/TerminalCodeBlock";
 
 export default function SourceCodeSection() {
   return (

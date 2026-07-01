@@ -1,4 +1,4 @@
-import PixelProgressBar from "../PixelProgressBar";
+import PixelProgressBar from "../PixelProgressBar/PixelProgressBar";
 import { cn } from "../../../lib/cn";
 import styles from "./HudCard.module.css";
 import paperTextureStyles from "../_shared/paperTexture.module.css";

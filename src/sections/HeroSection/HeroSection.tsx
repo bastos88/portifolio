@@ -1,10 +1,10 @@
-import cvPdf from "../assets/leonardo-bastos-cv.pdf";
-import heroBg640 from "../assets/portfolio/optimized/hero-arcade-bg-640.webp";
-import heroBg960 from "../assets/portfolio/optimized/hero-arcade-bg-960.webp";
-import heroBg1280 from "../assets/portfolio/optimized/hero-arcade-bg-1280.webp";
-import { DownloadCvButton, StartGameButton, ViewProjectsButton } from "../components/ui/buttons/HeroActionButtons/index";
-import HudCard from "../components/portfolio/HudCard/index";
-import { cn } from "../lib/cn";
+import cvPdf from "../../assets/leonardo-bastos-cv.pdf";
+import heroBg640 from "../../assets/portfolio/optimized/hero-arcade-bg-640.webp";
+import heroBg960 from "../../assets/portfolio/optimized/hero-arcade-bg-960.webp";
+import heroBg1280 from "../../assets/portfolio/optimized/hero-arcade-bg-1280.webp";
+import { DownloadCvButton, StartGameButton, ViewProjectsButton } from "../../components/ui/buttons/HeroActionButtons/HeroActionButtons";
+import HudCard from "../../components/portfolio/HudCard/HudCard";
+import { cn } from "../../lib/cn";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {

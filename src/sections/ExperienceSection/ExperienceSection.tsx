@@ -1,7 +1,7 @@
-import PixelPanel from "../components/portfolio/PixelPanel/index";
-import PixelSectionTitle from "../components/portfolio/PixelSectionTitle/index";
-import TimelineStep from "../components/portfolio/TimelineStep/index";
-import { timeline } from "../data/timeline";
+import PixelPanel from "../../components/portfolio/PixelPanel/PixelPanel";
+import PixelSectionTitle from "../../components/portfolio/PixelSectionTitle/PixelSectionTitle";
+import TimelineStep from "../../components/portfolio/TimelineStep/TimelineStep";
+import { timeline } from "../../data/timeline";
 
 export default function ExperienceSection() {
   return (

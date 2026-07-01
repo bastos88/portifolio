@@ -1,6 +1,6 @@
 import { Code2, Play } from "lucide-react";
 import type { Project } from "../../../types/portfolio";
-import LinkButton from "../../ui/buttons/LinkButton";
+import LinkButton from "../../ui/buttons/LinkButton/LinkButton";
 import { getProjectTechIcon } from "./projectTechIcons";
 
 type ProjectStageCardProps = {

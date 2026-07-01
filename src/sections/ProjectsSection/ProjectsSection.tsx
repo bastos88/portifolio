@@ -5,12 +5,12 @@ import {
   useState,
   type TransitionEvent,
 } from "react";
-import PixelPanel from "../components/portfolio/PixelPanel/index";
-import PixelSectionTitle from "../components/portfolio/PixelSectionTitle/index";
-import ProjectStageCard from "../components/portfolio/ProjectStageCard/index";
-import IconButton from "../components/ui/buttons/IconButton";
-import { projects } from "../data/projects";
-import { cn } from "../lib/cn";
+import PixelPanel from "../../components/portfolio/PixelPanel/PixelPanel";
+import PixelSectionTitle from "../../components/portfolio/PixelSectionTitle/PixelSectionTitle";
+import ProjectStageCard from "../../components/portfolio/ProjectStageCard/ProjectStageCard";
+import IconButton from "../../components/ui/buttons/IconButton/IconButton";
+import { projects } from "../../data/projects";
+import { cn } from "../../lib/cn";
 import styles from "./ProjectsSection.module.css";
 
 type Direction = "previous" | "next";

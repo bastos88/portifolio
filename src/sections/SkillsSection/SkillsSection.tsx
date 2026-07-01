@@ -1,8 +1,8 @@
-import PixelPanel from "../components/portfolio/PixelPanel/index";
-import PixelSectionTitle from "../components/portfolio/PixelSectionTitle/index";
-import PixelGhost from "../components/portfolio/PixelGhost/index";
-import SkillCard from "../components/portfolio/SkillCard/index";
-import { skills } from "../data/skills";
+import PixelPanel from "../../components/portfolio/PixelPanel/PixelPanel";
+import PixelSectionTitle from "../../components/portfolio/PixelSectionTitle/PixelSectionTitle";
+import PixelGhost from "../../components/portfolio/PixelGhost/PixelGhost";
+import SkillCard from "../../components/portfolio/SkillCard/SkillCard";
+import { skills } from "../../data/skills";
 import styles from "./SkillsSection.module.css";
 
 export default function SkillsSection() {

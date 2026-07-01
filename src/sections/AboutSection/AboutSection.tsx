@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { Coffee } from "lucide-react";
-import avatarGif from "../assets/portfolio/optimized/gif_Leo-cafe3.gif";
-import miniGameboyHeart220 from "../assets/portfolio/optimized/mini-gameboy-heart-220.webp";
-import miniGameboyHeart340 from "../assets/portfolio/optimized/mini-gameboy-heart-340.webp";
-import miniGameboyHeart480 from "../assets/portfolio/optimized/mini-gameboy-heart-480.webp";
-import PixelPanel from "../components/portfolio/PixelPanel/index";
-import PixelProgressBar from "../components/portfolio/PixelProgressBar/index";
-import PixelSectionTitle from "../components/portfolio/PixelSectionTitle/index";
-import { profileBars } from "../data/profile";
-import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
-import { cn } from "../lib/cn";
+import avatarGif from "../../assets/portfolio/optimized/gif_Leo-cafe3.gif";
+import miniGameboyHeart220 from "../../assets/portfolio/optimized/mini-gameboy-heart-220.webp";
+import miniGameboyHeart340 from "../../assets/portfolio/optimized/mini-gameboy-heart-340.webp";
+import miniGameboyHeart480 from "../../assets/portfolio/optimized/mini-gameboy-heart-480.webp";
+import PixelPanel from "../../components/portfolio/PixelPanel/PixelPanel";
+import PixelProgressBar from "../../components/portfolio/PixelProgressBar/PixelProgressBar";
+import PixelSectionTitle from "../../components/portfolio/PixelSectionTitle/PixelSectionTitle";
+import { profileBars } from "../../data/profile";
+import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
+import { cn } from "../../lib/cn";
 import styles from "./AboutSection.module.css";
 
 export default function AboutSection() {

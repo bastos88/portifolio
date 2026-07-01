@@ -4,9 +4,9 @@ import crtTerminalPlant260 from "../../../assets/portfolio/optimized/retro-monit
 import crtTerminalPlant360 from "../../../assets/portfolio/optimized/retro-monitor-plant-360.webp";
 import crtTerminalPlant520 from "../../../assets/portfolio/optimized/retro-monitor-plant-520.webp";
 import { socialCommands } from "../../../constants/socialCommands";
-import SubmitButton from "../../ui/buttons/SubmitButton";
-import RetroTextField from "../../ui/inputs/RetroTextField";
-import RetroTextarea from "../../ui/inputs/RetroTextarea";
+import SubmitButton from "../../ui/buttons/SubmitButton/SubmitButton";
+import RetroTextField from "../../ui/inputs/RetroTextField/RetroTextField";
+import RetroTextarea from "../../ui/inputs/RetroTextarea/RetroTextarea";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvzjbjow";
 

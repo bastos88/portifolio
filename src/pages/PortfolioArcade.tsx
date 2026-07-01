@@ -1,15 +1,15 @@
 import { lazy, Suspense } from "react";
-import RetroNavbar from "../components/portfolio/RetroNavbar/index";
-import StatusFooter from "../components/portfolio/StatusFooter/index";
-import AboutSection from "../sections/AboutSection";
-import ContactSection from "../sections/ContactSection";
-import ExperienceSection from "../sections/ExperienceSection";
-import HeroSection from "../sections/HeroSection";
-import ProjectsSection from "../sections/ProjectsSection";
-import SkillsSection from "../sections/SkillsSection";
-import SourceCodeSection from "../sections/SourceCodeSection";
+import RetroNavbar from "../components/portfolio/RetroNavbar/RetroNavbar";
+import StatusFooter from "../components/portfolio/StatusFooter/StatusFooter";
+import AboutSection from "../sections/AboutSection/AboutSection";
+import ContactSection from "../sections/ContactSection/ContactSection";
+import ExperienceSection from "../sections/ExperienceSection/ExperienceSection";
+import HeroSection from "../sections/HeroSection/HeroSection";
+import ProjectsSection from "../sections/ProjectsSection/ProjectsSection";
+import SkillsSection from "../sections/SkillsSection/SkillsSection";
+import SourceCodeSection from "../sections/SourceCodeSection/SourceCodeSection";
 
-const RocketScrollTop = lazy(() => import("../components/portfolio/RocketScrollTop/index"));
+const RocketScrollTop = lazy(() => import("../components/portfolio/RocketScrollTop/RocketScrollTop"));
 
 export default function PortfolioArcade() {
   return (
